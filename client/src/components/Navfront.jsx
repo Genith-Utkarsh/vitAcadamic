@@ -10,7 +10,6 @@ const Navfront = ({ setlight, light }) => {
   const [menuOpen, setMenuOpen] = useState(false); // Mobile menu toggle
   const [showmodule2, setshowmodule2] = useState(false)
   const {showUserLogin,setshowUserLogin} = useAuth()
-  console.log(showUserLogin)
   return (
     <div >
       <header className="border-b border-gray-300" >

@@ -1,31 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 import { useAuth } from "../context/auth";
 const Login = () => {
-    const {setshowUserLogin} = useAuth()
-    const [state, setState] = React.useState("login");
-    const [name, setName] = React.useState("");
-    const [email, setEmail] = React.useState("");
-    const [password, setPassword] = React.useState("");
+   const { setshowUserLogin, axios } = useAuth();
+  const [state, setState] = useState("login"); // or "signup"
+  const [formData, setFormData] = useState({});
+ const handleChange = (e) => {
     
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.id]: e.target.value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const { data } = await axios.post(`/api/${state}`, formData);
+      console.log(data); // Optional: log or handle response
+      setshowUserLogin(null); // Close the modal or popup
+    } catch (error) {
+      console.error("Auth error:", error?.response?.data || error.message);
+      // You can show error message to user here
+    }
+  };
+
     return (
        <div onClick={() => setshowUserLogin(false)} className='fixed top-0 bottom-0 left-0 right-0 z-30 flex items-center text-sm text-gray-600 bg-black/50 w-full h-screen lg:p-5'>
-         <form onClick={(e)=>e.stopPropagation()} className="flex flex-col gap-4 m-auto items-start p-8 py-12 w-80 sm:w-[352px] rounded-lg shadow-xl border border-gray-200 bg-white">
+         <form onSubmit={handleSubmit}  onClick={(e)=>e.stopPropagation()} className="flex flex-col gap-4 m-auto items-start p-8 py-12 w-80 sm:w-[352px] rounded-lg shadow-xl border border-gray-200 bg-white">
             <p className="text-2xl font-medium m-auto">
                 <span className="text-[#33A491]">User</span> {state === "login" ? "Login" : "Sign Up"}
             </p>
             {state === "register" && (
                 <div className="w-full">
                     <p>Name</p>
-                    <input onChange={(e) => setName(e.target.value)} value={name} placeholder="type here" className="border border-gray-200 rounded w-full p-2 mt-1 outline-indigo-500" type="text" required />
+                    <input  id = "name" onChange={handleChange}  placeholder="type here" className="border border-gray-200 rounded w-full p-2 mt-1 outline-indigo-500" type="text" required />
                 </div>
             )}
             <div className="w-full ">
                 <p>Email</p>
-                <input onChange={(e) => setEmail(e.target.value)} value={email} placeholder="type here" className="border border-gray-200 rounded w-full p-2 mt-1 outline-indigo-500" type="email" required />
+                <input  id = "email" onChange={handleChange}  placeholder="type here" className="border border-gray-200 rounded w-full p-2 mt-1 outline-indigo-500" type="email" required />
             </div>
             <div className="w-full ">
                 <p>Password</p>
-                <input onChange={(e) => setPassword(e.target.value)} value={password} placeholder="type here" className="border border-gray-200 rounded w-full p-2 mt-1 outline-indigo-500" type="password" required />
+                <input  id = "password" onChange={handleChange}  placeholder="type here" className="border border-gray-200 rounded w-full p-2 mt-1 outline-indigo-500" type="password" required />
             </div>
             {state === "register" ? (
                 <p>
