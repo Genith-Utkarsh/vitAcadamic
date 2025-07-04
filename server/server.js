@@ -12,10 +12,15 @@ app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 app.use(cookieParser())
 app.use(Auth("userToken"))
+const allowedOrigins = [
+  "https://vitacadeemic.onrender.com",
+  "http://localhost:3000"
+];
+
 app.use(cors({
-    origin:"http://localhost:5173",
-    credentials:true
-}))
+  origin: allowedOrigins,
+  credentials: true
+}));
 const PORT = process.env.PORT || 6010
 dbConnection(process.env.MONGODB).then(()=>{
     console.log("Mongodb is Connected")
