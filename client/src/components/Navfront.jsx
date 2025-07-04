@@ -6,10 +6,9 @@ import { WiDayLightWind } from "react-icons/wi";
 import { NavLink } from "react-router-dom";
 import { useAuth } from '../context/auth';
 const Navfront = ({ setlight, light }) => {
-  const [showModules, setShowModules] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false); // Mobile menu toggle
+  const [showModules, setShowModules] = useState(false); // Mobile menu toggle
   const [showmodule2, setshowmodule2] = useState(false)
-  const {showUserLogin,setshowUserLogin} = useAuth()
+  const {showUserLogin,setshowUserLogin,menuOpen,setMenuOpen} = useAuth()
   return (
     <div >
       <header className="border-b border-gray-300" >

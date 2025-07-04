@@ -11,13 +11,16 @@ import { useAuth } from './context/auth'
 import Login from './components/Login'
 import Feedbackfrom from './components/Feedbackfrom'
 import SuggestionFeedbackPage from './components/FeedBackData.JSX'
+import {Toaster} from "react-hot-toast"
 function App() {
   const [light,setlight] = useState(true)
   const {showUserLogin,feedbackon} = useAuth()
   return (
     
    <div className={  light ?`bg-white text-black`:`bg-black text-white`}>
+    <Toaster/>
     <Routes>
+      
       <Route path='/' element={<Homepage setlight={setlight} light={light}/>}/>
       <Route path='/:modules' element={<Lectures/>}/>
       <Route path='/:modules/:sub' element={<DasbordPage/>}/>

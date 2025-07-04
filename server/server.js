@@ -1,10 +1,16 @@
 import express from "express"
 const app = express()
 import dotenv from "dotenv";
+import cookieParser from "cookie-parser";
 import { dbConnection } from "./config/db.js";
 import userRoutes from "./Routes/user.js";
+import { Auth } from "./middleware/user.js";
 import cors from "cors"
 dotenv.config();
+app.use(express.json())
+app.use(express.urlencoded({extended:true}))
+app.use(cookieParser())
+app.use(Auth("userToken"))
 app.use(cors({
     origin:"http://localhost:5173",
     credentials:true
@@ -14,6 +20,11 @@ dbConnection(process.env.MONGODB).then(()=>{
     console.log("Mongodb is Connected")
 }).catch((err)=>{
     console.log("ERROR",err)
+})
+app.get("/api/user",(req,res)=>{
+    res.json({
+        userdata:req.user
+    })
 })
 app.use("/api",userRoutes)
 app.listen(PORT,(req,res)=>{

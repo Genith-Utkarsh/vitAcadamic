@@ -7,6 +7,7 @@ export const useAuth = ()=>{
 export const AuthContextProvider = ({ children }) => {
     const [showUserLogin,setshowUserLogin] = useState(false)
     const [feedbackon,setfeedbackon] = useState(false)
+    const [menuOpen, setMenuOpen] = useState(false);
     const baseUrl = import.meta.env.VITE_SERVER_URL
     axios.defaults.baseURL = baseUrl
     axios.defaults.withCredentials = true
@@ -15,7 +16,9 @@ export const AuthContextProvider = ({ children }) => {
         setshowUserLogin,
         feedbackon,
         setfeedbackon,
-        axios
+        axios,
+        menuOpen,
+        setMenuOpen
     }
   return (
     <Authlogincontext.Provider value={value}>

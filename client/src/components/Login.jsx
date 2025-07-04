@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useAuth } from "../context/auth";
+import toast from "react-hot-toast";
 const Login = () => {
-   const { setshowUserLogin, axios } = useAuth();
+   const { setshowUserLogin, axios,setMenuOpen } = useAuth();
   const [state, setState] = useState("login"); // or "signup"
   const [formData, setFormData] = useState({});
  const handleChange = (e) => {
@@ -16,11 +17,18 @@ const Login = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(`/api/${state}`, formData);
-      console.log(data); // Optional: log or handle response
-      setshowUserLogin(null); // Close the modal or popup
+      if(data.success){
+        toast.success(data.message)
+        setshowUserLogin(false); 
+        setMenuOpen(false)
+      }
+      else{
+        toast.error(data.message)
+        setshowUserLogin(true)
+      }
     } catch (error) {
-      console.error("Auth error:", error?.response?.data || error.message);
-      // You can show error message to user here
+      console.error("Auth error:", error)
+      
     }
   };
 
