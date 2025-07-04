@@ -28,5 +28,5 @@ app.get("/api/user",(req,res)=>{
 })
 app.use("/api",userRoutes)
 app.listen(PORT,(req,res)=>{
-    console.log( `server is runing on Port ${PORT}`)
+    console.log( `server is runing on Port http://localhost:${PORT}`)
 })

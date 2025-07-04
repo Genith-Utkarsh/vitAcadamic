@@ -4,11 +4,13 @@ import { CgNotes } from "react-icons/cg";
 import { FaRegNewspaper } from "react-icons/fa6";
 import { WiDayLightWind } from "react-icons/wi";
 import { NavLink } from "react-router-dom";
+import { CgProfile } from "react-icons/cg";
 import { useAuth } from '../context/auth';
 const Navfront = ({ setlight, light }) => {
   const [showModules, setShowModules] = useState(false); // Mobile menu toggle
+  
   const [showmodule2, setshowmodule2] = useState(false)
-  const {showUserLogin,setshowUserLogin,menuOpen,setMenuOpen} = useAuth()
+  const {showUserLogin,setshowUserLogin,menuOpen,setMenuOpen,userdata,logout} = useAuth()
   return (
     <div >
       <header className="border-b border-gray-300" >
@@ -34,16 +36,17 @@ const Navfront = ({ setlight, light }) => {
           <ul
             className={`absolute md:static top-full left-0 w-full md:w-auto bg-white md:bg-transparent md:flex md:space-x-10 text-gray-600 text-sm font-medium px-6 py-4 md:p-0 z-20 transition-all duration-300 ${menuOpen ? 'block' : 'hidden'}`}
           >
-            <li>
+           
+            {
+              userdata ? <div className='md:flex md:gap-5'> <li>
               <a href="#" className="block py-2 hover:text-gray-900 transition">Home</a>
-            </li>
-            <li>
+            </li><li>
               <a onClick={() => setShowModules(!showModules)} href="#" className="block py-2 hover:text-gray-900 transition">
                 Lectures
               </a>
               {/* Show Modules Dropdown */}
               {showModules && (
-                <div className="mt-7 bg-[#33A491] rounded-xl shadow-lg p-4 lg:ml-90 space-y-3 w-52 md:absolute md:left-40 md:top-14 z-30">
+                <div className="mt-7 bg-[#33A491] rounded-xl shadow-lg p-4 lg:ml-120 space-y-3 w-52 md:absolute md:left-40 md:top-14 z-30">
                   <h1 className="text-white text-lg border-b border-white pb-2">
                     <NavLink to="/module1">Module 1</NavLink>
                   </h1>
@@ -56,7 +59,7 @@ const Navfront = ({ setlight, light }) => {
             <li>
               <a href="#" className="block py-2 hover:text-gray-900 transition" onClick={()=>setshowmodule2(!showmodule2)}>PYQs</a>
                  {showmodule2 && (
-                <div className="mt-7 bg-[#33A491] rounded-xl shadow-lg p-4 lg:ml-120 space-y-3 w-52 md:absolute md:left-40 md:top-14 z-30">
+                <div className="mt-7 bg-[#33A491] rounded-xl shadow-lg p-4 lg:ml-160 space-y-3 w-52 md:absolute md:left-40 md:top-14 z-30">
                   <h1 className="text-white text-lg border-b border-white pb-2">
                     <NavLink to="/pyq/module1">Module 1</NavLink>
                   </h1>
@@ -66,21 +69,30 @@ const Navfront = ({ setlight, light }) => {
                 </div>
               )}
               
-            </li>
+            </li></div> :null
+            }
             <li className="md:hidden mt-3">
-              <a href="#" className="text-gray-700 font-semibold block py-2 hover:text-gray-900 transition" onClick={()=>setshowUserLogin(true)} >Log In</a>
-              <a href="#" className="bg-[#33A491] hover:bg-[#559288] text-white text-sm font-semibold block text-center px-4 py-2 rounded-md transition mt-2">
-                Get free trial
-              </a>
+            {
+              userdata ? <div><a className="bg-[#33A491] hover:bg-[#31524c] text-white text-sm font-semibold px-4 py-2 rounded-md transition" href="#" onClick={()=>{logout(),setMenuOpen(false)}} >
+                Logout
+            </a></div>:<div>
+              <a href="#" className="bg-[#33A491] hover:bg-[#559288] text-white text-sm font-semibold block text-center px-4 py-2 rounded-md transition mt-2 " onClick={()=>setshowUserLogin(true)} >
+                Login for Free Study material
+              </a></div>
+            }
             </li>
           </ul>
 
           {/* Desktop Right Section */}
           <div className="hidden md:flex items-center space-x-6">
-            <a className="text-gray-700 font-semibold hover:text-gray-900 transition" href="#" onClick={()=>setshowUserLogin(true)}>Sign Up</a>
-            <a className="bg-[#33A491] hover:bg-[#31524c] text-white text-sm font-semibold px-4 py-2 rounded-md transition" href="#" onClick={()=>setshowUserLogin(true)}>
-              Get Free Login
-            </a>
+    
+            {
+              userdata ? <div><a className="bg-[#33A491] hover:bg-[#31524c] text-white text-sm font-semibold px-4 py-2 rounded-md transition" href="#" onClick={()=>{logout(),setMenuOpen(false)}}  >
+                Logout
+            </a></div> :<div><a className="bg-[#33A491] hover:bg-[#31524c] text-white text-sm font-semibold px-4 py-2 rounded-md transition" href="#" onClick={()=>setshowUserLogin(true)}>
+                Login for Free Study material
+            </a></div>
+            }
             {/* <div className="bg-[#33A491] px-3 py-2 rounded-full">
               <WiDayLightWind onClick={() => setlight(!light)} className="text-white w-5" />
             </div> */}
@@ -110,9 +122,11 @@ const Navfront = ({ setlight, light }) => {
         </p>
 
         <div className="mt-6 flex flex-col items-center">
-          <a className="bg-[#33A491] hover:bg-[#2f423f] text-white text-sm font-semibold px-6 py-2 rounded-md transition" onClick={()=>setshowUserLogin(true)} href="#">
-            Get Free Login
-          </a>
+          {
+            userdata? null:<div><a className="bg-[#33A491] hover:bg-[#2f423f] text-white text-sm font-semibold px-6 py-2 rounded-md transition" onClick={()=>setshowUserLogin(true)} href="#">
+            Login for Free Study material
+          </a></div>
+          }
         </div>
 
         {/* Features Section */}

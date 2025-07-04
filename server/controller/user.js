@@ -77,3 +77,38 @@ export const login = async (req, res) => {
     });
   }
 };
+export const checkauth = async (req, res) => {
+  try {
+    const userId = req.user._id;
+    if (!userId) {
+      return res.status(401).json({ success: false, message: "Not authenticated" });
+    }
+    const userDatas = await User.findById(userId).select("-password"); // Optional: exclude password
+
+    if (!userDatas) {
+      return res.status(404).json({ success: false, message: "User not found" });
+    }
+    res.json({
+      success: true,
+      userData: userDatas,
+    });
+  } catch (error) {
+    console.error("CheckAuth error:", error);
+    res.status(500).json({ success: false, message: "Server error" });
+  }
+};
+
+
+export const Logout = async(req,res)=>{
+  try {
+    res.clearCookie("userToken").json({
+      success:true,
+      message:"user Logout SuccessFull!"
+    })
+  } catch (error) {
+    res.json({
+      success:false,
+      message:"isuue for Logout"
+    })
+  }
+}

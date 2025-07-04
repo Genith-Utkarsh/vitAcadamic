@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { useAuth } from "../context/auth";
 import toast from "react-hot-toast";
+import { useEffect } from "react";
 const Login = () => {
-   const { setshowUserLogin, axios,setMenuOpen } = useAuth();
+   const { setshowUserLogin, axios,setMenuOpen,setuserData } = useAuth();
   const [state, setState] = useState("login"); // or "signup"
   const [formData, setFormData] = useState({});
+ 
  const handleChange = (e) => {
-    
+
     setFormData((prev) => ({
       ...prev,
       [e.target.id]: e.target.value
@@ -19,6 +21,7 @@ const Login = () => {
       const { data } = await axios.post(`/api/${state}`, formData);
       if(data.success){
         toast.success(data.message)
+        setuserData(data.userData)
         setshowUserLogin(false); 
         setMenuOpen(false)
       }

@@ -5,9 +5,11 @@ import { CgProfile } from "react-icons/cg";
 import { IoIosNotifications } from "react-icons/io";
 import { lectureData } from '../assets/assets';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/auth';
 import Footer from '../components/Footer';
 
 const Lectures = () => {
+  const {setMenuOpen} = useAuth()
   const { modules } = useParams();
  const [input,setInput] = useState("")
  const navigate = useNavigate()
@@ -45,7 +47,7 @@ const Lectures = () => {
             <IoIosNotifications /> Notification
           </p>
           <p className="hover:text-[#33A491] cursor-pointer flex items-center gap-2">
-            <CgProfile /> Profile
+           <button className='bg-[#33A491] text-white p-2 rounded-2xl' onClick={()=>{navigate("/"),setMenuOpen(false)}}>Back To Home</button>
           </p>
         </div>
       </div>
