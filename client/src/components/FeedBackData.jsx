@@ -1,8 +1,9 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 const SuggestionForm = () => {
     const { siggFeed } = useParams()
-    console.log(siggFeed)
+    const navigator = useNavigate()
     return (
         <div className="min-h-screen bg-[#f4fdfc] py-12 px-4 md:px-16 flex items-center justify-center">
             <div className="bg-white p-8 rounded-2xl shadow-lg w-full max-w-xl border border-[#33A491]/30">
@@ -66,6 +67,7 @@ const SuggestionForm = () => {
                             siggFeed === "Suggestion" ? " Submit Your Suggestion" : "Submit Your FeedBack"
                         }
                     </button>
+                    <button  className="w-full bg-[#33A491] text-white py-2 rounded-lg hover:bg-[#2a8f78] transition " onClick={()=>navigator("/")}>Back to Home</button>
                 </form>
             </div>
         </div>

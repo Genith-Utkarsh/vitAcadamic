@@ -9,10 +9,10 @@ const Feedbackfrom = () => {
    
     <div onClick={()=>setfeedbackon(false)} className='flex flex-col justify-center items-center'>
       <div  className='fixed top-0 bottom-0 left-0 right-0 z-30 flex items-center justify-center text-sm text-white bg-black/50 w-full h-screen lg:p-5'>
-             <div className='bg-white text-black p-8 flex flex-col justify-center items-center'>
+             <div className='bg-white text-black p-1  flex flex-col justify-center items-center lg:p-10 '>
                  <form onClick={(e)=>e.stopPropagation()} className="flex flex-col gap-4 m-auto  p-8 py-12 w-80 sm:w-[352px]  justify-center items-center ">
             <p className="text-2xl font-medium m-auto flex justify-center items-center ">
-                <span className="text-[#33A491] text-nowrap text-center" >Was This PlatFrom HelpFull?</span>
+                <span className="text-[#33A491] text-[15px] text-center" >Was This PlatFrom HelpFull?</span>
             </p>
              
               <div className='flex justify-center items-center'>
