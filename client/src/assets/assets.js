@@ -124,32 +124,27 @@ export const dummyLectureData = [
         subtopics: [
           {
             title: 'Revision of matrices, Elementary transformations, Elementary Matrices',
-            videoLink: 'https://youtu.be/_4Hre3j9me4?si=wQmTjz1YCRXNWy5e',
+            videoLink: 'https://youtu.be/zAsSkYhDxGM?si=lsZ9ogQ9UaRIdqD5',
             notesLink: 'https://example.com/notes/matrix-concepts.pdf',
           },
           {
             title: 'Rank of matrix: Echelon form, Pivot position, Pivot columns, non-pivot columns',
-            videoLink: 'https://www.youtube.com/watch?v=2HYqVtGxvJQ',
+            videoLink: 'https://youtu.be/qBBhTkIdToY?si=vXpKy-dqhnJhNkZm',
             notesLink: 'https://example.com/notes/matrix-concepts.pdf',
           },
           {
             title: 'Non-Homogeneous System of linear equation and its solution and problem solving',
-            videoLink: 'https://www.youtube.com/watch?v=2HYqVtGxvJQ',
+            videoLink: 'https://youtu.be/B4h6OkQ0ZJ8?si=w0qVfgq2YTadfiC2',
             notesLink: 'https://example.com/notes/matrix-concepts.pdf',
           },
           {
             title: 'Homogeneous System of linear equation and its solution and problem solving',
-            videoLink: 'https://www.youtube.com/watch?v=2HYqVtGxvJQ',
+            videoLink: 'https://youtu.be/gXveJraU7hc?si=jKrascQPQtW82O7q',
             notesLink: 'https://example.com/notes/matrix-concepts.pdf',
           },
           {
             title: 'Gauss-Jordan Elimination Problem solving on all cases',
-            videoLink: 'https://www.youtube.com/watch?v=2HYqVtGxvJQ',
-            notesLink: 'https://example.com/notes/matrix-concepts.pdf',
-          },
-          {
-            title: 'Application Networking Problem',
-            videoLink: 'https://www.youtube.com/watch?v=2HYqVtGxvJQ',
+            videoLink: 'https://youtu.be/iggxjHSQiOI?si=A2BYXzBnYRjHQx1D ',
             notesLink: 'https://example.com/notes/matrix-concepts.pdf',
           },
         ],
@@ -159,32 +154,32 @@ export const dummyLectureData = [
         subtopics: [
           {
             title: 'Introduction, Definition of Vector Space , Standard Vector Spaces Definition of Subspace ',
-            videoLink: 'https://www.youtube.com/watch?v=cfhw2TC4k0Y',
+            videoLink: 'https://youtu.be/yzuoyA2EJPA?si=0goW3g_RPFVHeOZ_',
             notesLink: 'https://example.com/notes/first-order-des.pdf',
           },
           {
             title: 'Examples on Subspace',
-            videoLink: 'https://www.youtube.com/watch?v=XYi2-LPrwm4',
+            videoLink: 'https://youtu.be/5LCO26C-ggo?si=GeHPJUnNrJGBBTSA',
             notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
           },
           {
             title: 'Linear combination, Span of a set,Spanning set',
-            videoLink: 'https://www.youtube.com/watch?v=XYi2-LPrwm4',
+            videoLink: 'https://youtu.be/iF7ya80h1Rs?si=6sCuits_87VqrWEA',
             notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
           },
           {
             title: 'Linear Dependence and Independence of vectors ',
-            videoLink: 'https://www.youtube.com/watch?v=XYi2-LPrwm4',
+            videoLink: 'https://youtu.be/9WjuLvPT_2A?si=uYUTTqS7FGuagNiX',
             notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
           },
           {
             title: 'Basis & Dimension of a subspace  ',
-            videoLink: 'https://www.youtube.com/watch?v=XYi2-LPrwm4',
+            videoLink: 'https://youtu.be/pG-IAFOiOw4?si=yzSeoIy63wPaw6Qp',
             notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
           },
           {
             title: 'Fundamental Subspaces',
-            videoLink: 'https://www.youtube.com/watch?v=XYi2-LPrwm4',
+            videoLink: 'https://youtu.be/URa07AbjZhQ?si=oySt8GFqezicKKFq ',
             notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
           },
         ],
@@ -194,32 +189,32 @@ export const dummyLectureData = [
         subtopics: [
           {
             title: 'Inner Product- Definition and Examples, Inner product spaces',
-            videoLink: 'https://www.youtube.com/watch?v=cfhw2TC4k0Y',
+            videoLink: 'https://youtu.be/8M0moiQLanE?si=nWMpnbNPBDln6Hbc',
             notesLink: 'https://example.com/notes/first-order-des.pdf',
           },
           {
             title: 'Norm,Distance, Angle, Projection',
-            videoLink: 'https://www.youtube.com/watch?v=XYi2-LPrwm4',
+            videoLink: 'https://youtu.be/fpB1GvteuMY?si=xc8UixvbCqdQN04Q',
             notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
           },
           {
             title: 'Orthogonal and Orthonormal vectors, Orthogonal and Orthonormal Set,complete',
-            videoLink: 'https://www.youtube.com/watch?v=XYi2-LPrwm4',
+            videoLink: 'https://youtu.be/K1vWFx01I2A?si=vQQkU4dfriZSWaXZ',
             notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
           },
           {
             title: 'Gram-Schmidt process of orthogonalization',
-            videoLink: 'https://www.youtube.com/watch?v=XYi2-LPrwm4',
+            videoLink: 'https://youtu.be/UOZjINOGLog?si=M4HuseuWf-jMwEn1',
             notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
           },
           {
             title: 'Orthogonality of Fundamental Subspaces.',
-            videoLink: 'https://www.youtube.com/watch?v=XYi2-LPrwm4',
+            videoLink: 'https://youtu.be/x6enM9dtOH8?si=ALNXHcO7rQnrB-b5',
             notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
           },
           {
             title: 'Applications to least square fitting to data',
-            videoLink: 'https://www.youtube.com/watch?v=XYi2-LPrwm4',
+            videoLink: 'https://youtu.be/qGqfYrMpewY?si=OPyrlGQhdwdhxiQP ',
             notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
           },
         ],
@@ -234,17 +229,17 @@ export const dummyLectureData = [
           },
           {
             title: 'Kernel, Range of linear transformations',
-            videoLink: 'https://www.youtube.com/watch?v=XYi2-LPrwm4',
+            videoLink: 'https://youtu.be/ImoKUiapTsQ?si=0fT_hkbHet4Qhg7A',
             notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
           },
           {
             title: 'One-One-Onto linear transformations',
-            videoLink: 'https://www.youtube.com/watch?v=XYi2-LPrwm4',
+            videoLink: 'https://youtu.be/oM_BWfZFJOo?si=NVZBrt-u_0H3N8aj',
             notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
           },
           {
             title: 'Rank and Nullity Theorem',
-            videoLink: 'https://www.youtube.com/watch?v=XYi2-LPrwm4',
+            videoLink: 'https://youtu.be/Kpp2hM4V3x0?si=TFxGjwcdgR-97LnD',
             notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
           },
           {
@@ -254,7 +249,7 @@ export const dummyLectureData = [
           },
           {
             title: 'Geometric Linear transformations in R2 and R3 ',
-            videoLink: 'https://www.youtube.com/watch?v=XYi2-LPrwm4',
+            videoLink: 'https://youtu.be/tlyFZCcATrQ?si=TBrUhAuLZwEew4fz',
             notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
           },
         ],
@@ -264,32 +259,32 @@ export const dummyLectureData = [
         subtopics: [
           {
             title: 'Eigen Values and Eigen Vectors of a matrix, Characteristic Equation,Properties',
-            videoLink: 'https://www.youtube.com/watch?v=cfhw2TC4k0Y',
+            videoLink: 'https://youtu.be/h8sg_XBp6VA?si=MmZ284YNw-0sV-e2',
             notesLink: 'https://example.com/notes/first-order-des.pdf',
           },
           {
             title: 'Examples on Eigen Values and Eigen Vectors',
-            videoLink: 'https://www.youtube.com/watch?v=XYi2-LPrwm4',
+            videoLink: 'https://youtu.be/R6X6UhXvkbE?si=OO6strxAF7e2EHMm',
             notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
           },
           {
             title: 'Algebraic multiplicity, Eigen Space, Geometric multiplicity',
-            videoLink: 'https://www.youtube.com/watch?v=XYi2-LPrwm4',
+            videoLink: 'https://youtu.be/jHQUreSbcaU?si=QYoJfYQc6EB4F2jM',
             notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
           },
           {
             title: 'Diagonalization of a matrix',
-            videoLink: 'https://www.youtube.com/watch?v=XYi2-LPrwm4',
+            videoLink: 'https://youtu.be/IKdqDI_oxxI?si=OanZyQLsNiVwELlV',
             notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
           },
           {
             title: 'Introduction to Quadratic Form',
-            videoLink: 'https://www.youtube.com/watch?v=XYi2-LPrwm4',
+            videoLink: 'https://youtu.be/tM3TQRRybO0?si=ERjpkq_8hGqQzb5N',
             notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
           },
           {
             title: 'Principal Axes Theorem',
-            videoLink: 'https://www.youtube.com/watch?v=XYi2-LPrwm4',
+            videoLink: 'https://youtu.be/gii12FE-A44?si=q20xSWzjch34eCrI',
             notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
           },
         ],
