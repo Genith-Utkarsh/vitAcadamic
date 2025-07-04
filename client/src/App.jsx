@@ -10,7 +10,7 @@ import PYQDashBord from './pages/PYQDashBord'
 import { useAuth } from './context/auth'
 import Login from './components/Login'
 import Feedbackfrom from './components/Feedbackfrom'
-import SuggestionFeedbackPage from './components/FeedBackData.JSX'
+import SuggestionForm from './components/FeedBackData'
 import {Toaster} from "react-hot-toast"
 function App() {
   const [light,setlight] = useState(true)
@@ -26,7 +26,7 @@ function App() {
       <Route path='/:modules/:sub' element={<DasbordPage/>}/>
       <Route path='/pyq/:modulespyq' element={<Pyq/>}/>
       <Route path='/pyqs/:subs' element={<PYQDashBord/>}/>
-      <Route path='/:siggFeed/datafromuser' element={<SuggestionFeedbackPage/>}/>
+      <Route path='/:siggFeed/datafromuser' element={<SuggestionForm/>}/>
     </Routes>
     {
     showUserLogin ? <Login/>:null
