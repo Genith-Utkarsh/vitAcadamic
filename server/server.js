@@ -5,6 +5,7 @@ import cookieParser from "cookie-parser";
 import { dbConnection } from "./config/db.js";
 import userRoutes from "./Routes/user.js";
 import { Auth } from "./middleware/user.js";
+import suggroutes from "./Routes/suges.js";
 import cors from "cors"
 dotenv.config();
 app.use(express.json())
@@ -27,6 +28,7 @@ app.get("/api/user",(req,res)=>{
     })
 })
 app.use("/api",userRoutes)
+app.use("/api",suggroutes)
 app.listen(PORT,(req,res)=>{
     console.log( `server is runing on Port http://localhost:${PORT}`)
 })
