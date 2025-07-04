@@ -74,6 +74,20 @@ This project is **unofficial** and created **by a student** of VIT Pune as an op
 If you like the idea, don't forget to ⭐ star the repo and support the project!
 
 ---
+### 🔧 Backend (Express + MongoDB)
+
+
+    git clone https://github.com/kiran04-code/green-2cart.git
+
+    cd server
+    npm install
+    npm start
+🎨 Frontend (React + Vite)
+
+    cd client
+    npm install
+    npm run dev
+
 
 
     
