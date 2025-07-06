@@ -77,8 +77,7 @@ If you like the idea, don't forget to ⭐ star the repo and support the project!
 ### 🔧 Backend (Express + MongoDB)
 
 
-    git clone https://github.com/kiran04-code/green-2cart.git
-
+    git clone https://github.com/Genith-Utkarsh/vitAcadamic.git
     cd server
     npm install
     npm start
