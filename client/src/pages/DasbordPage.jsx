@@ -5,6 +5,7 @@ import { FaPhotoVideo } from "react-icons/fa";
 import { CgNotes } from "react-icons/cg";
 import { FaCalculator } from "react-icons/fa";
 import Footer from '../components/Footer';
+import VideoModal from '../components/VideoModal';
 const DashboardPage = () => {
   const { sub } = useParams(); // e.g., "math", "physics"
   const filteredData = dummyLectureData.find(
@@ -12,9 +13,24 @@ const DashboardPage = () => {
   );
 
   const [openUnitIndex, setOpenUnitIndex] = useState(null);
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+  const [currentVideoUrl, setCurrentVideoUrl] = useState('');
+  const [currentVideoTitle, setCurrentVideoTitle] = useState('');
 
   const toggleUnit = (index) => {
     setOpenUnitIndex(prevIndex => (prevIndex === index ? null : index));
+  };
+
+  const openVideoModal = (videoUrl, title) => {
+    setCurrentVideoUrl(videoUrl);
+    setCurrentVideoTitle(title);
+    setIsVideoModalOpen(true);
+  };
+
+  const closeVideoModal = () => {
+    setIsVideoModalOpen(false);
+    setCurrentVideoUrl('');
+    setCurrentVideoTitle('');
   };
 
   if (!filteredData) {
@@ -60,19 +76,17 @@ const DashboardPage = () => {
                     <FaCalculator/> {lecture.title}
                   </p>
                   <div className="flex gap-4 flex-wrap">
-                    <a
-                      href={lecture.videoLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-[#136457] flex items-center gap-2 text-white px-4 py-1.5 roundedtransition"
+                    <button
+                      onClick={() => openVideoModal(lecture.videoLink, lecture.title)}
+                      className="bg-[#136457] flex items-center gap-2 text-white px-4 py-1.5 rounded hover:bg-[#0e4a3f] transition"
                     >
                       <FaPhotoVideo/> Watch Video
-                    </a>
+                    </button>
                     <a
                       href={lecture.notesLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-[#136457] flex items-center gap-2 text-white px-4 py-1.5  transition"
+                      className="bg-[#136457] flex items-center gap-2 text-white px-4 py-1.5 rounded hover:bg-[#0e4a3f] transition"
                     >
                       <CgNotes/> Handwritten Notes
                     </a>
@@ -89,6 +103,14 @@ const DashboardPage = () => {
         
     </div>
      <Footer/> 
+     
+     {/* Video Modal */}
+     <VideoModal
+       isOpen={isVideoModalOpen}
+       onClose={closeVideoModal}
+       videoUrl={currentVideoUrl}
+       title={currentVideoTitle}
+     />
    </div>
   );
 };

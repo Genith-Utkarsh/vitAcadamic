@@ -27,6 +27,34 @@ export default {
     aem,amepdf
     
 }
+
+// Utility function to extract YouTube video ID from URL
+export const extractYouTubeVideoId = (url) => {
+  if (!url) return null;
+  
+  // Handle YouTube playlist URLs
+  const playlistMatch = url.match(/[?&]list=([a-zA-Z0-9_-]+)/);
+  if (playlistMatch) {
+    return { type: 'playlist', id: playlistMatch[1] };
+  }
+  
+  // Handle different YouTube video URL formats
+  const patterns = [
+    /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^#&?]*)/,
+    /youtube\.com\/v\/([^#&?]*)/,
+    /youtube\.com\/watch\?.*v=([^#&?]*)/
+  ];
+  
+  for (const pattern of patterns) {
+    const match = url.match(pattern);
+    if (match && match[1] && match[1].length === 11) {
+      return { type: 'video', id: match[1] };
+    }
+  }
+  
+  return null;
+};
+
 export const lectureData = [
   {
     ModuleName: "module1",
