@@ -4,7 +4,7 @@
 
 The video player has been successfully integrated and handles all YouTube URL formats in your assets.js file.
 
-## 📊 **URL Analysis from assets.js (Line 139+)**
+## 📊 **URL Analysis from assets.js **
 
 ### **Individual Video URLs** ✅
 ```javascript
