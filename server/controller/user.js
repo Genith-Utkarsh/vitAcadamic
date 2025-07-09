@@ -39,7 +39,6 @@ export const register = async (req, res) => {
 
 export const login = async (req, res) => {
   const { email, password } = req.body;
-
   try {
     const userdatas = await User.findOne({ email });
 
@@ -77,24 +76,22 @@ export const login = async (req, res) => {
     });
   }
 };
-export const checkauth = async (req, res) => {
+export const checkauth = async (req, res, next) => {
   try {
-    const userId = req.user._id;
-    if (!userId) {
-      return res.status(401).json({ success: false, message: "Not authenticated" });
+    if (!req.user) {
+      return res.status(401).json({ success: false, message: "Unauthorized access" });
     }
-    const userDatas = await User.findById(userId).select("-password"); // Optional: exclude password
 
-    if (!userDatas) {
-      return res.status(404).json({ success: false, message: "User not found" });
-    }
+    const userId = req.user._id;
+    const userDatas = await User.findById(userId).select("-password");
+
     res.json({
       success: true,
       userData: userDatas,
     });
   } catch (error) {
-    console.error("CheckAuth error:", error);
-    res.status(500).json({ success: false, message: "Server error" });
+    console.error(error);
+    res.json({ success: false, message: "Server error" });
   }
 };
 

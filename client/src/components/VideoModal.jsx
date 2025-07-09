@@ -116,7 +116,6 @@ const VideoModal = ({ isOpen, onClose, videoUrl, title }) => {
             </div>
           )}
         </div>
-
         {/* Modal Footer */}
         <div className="p-3 sm:p-4 border-t border-gray-200 bg-gray-50">
           <div className="flex flex-col sm:flex-row justify-end gap-3">

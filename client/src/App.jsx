@@ -12,6 +12,7 @@ import Login from './components/Login'
 import Feedbackfrom from './components/Feedbackfrom'
 import SuggestionForm from './components/FeedBackData'
 import {Toaster} from "react-hot-toast"
+import Admin from './components/admin/Amin'
 function App() {
   const [light,setlight] = useState(true)
   const {showUserLogin,feedbackon} = useAuth()
@@ -20,13 +21,13 @@ function App() {
    <div className={  light ?`bg-white text-black`:`bg-black text-white`}>
     <Toaster/>
     <Routes>
-      
       <Route path='/' element={<Homepage setlight={setlight} light={light}/>}/>
       <Route path='/:modules' element={<Lectures/>}/>
       <Route path='/:modules/:sub' element={<DasbordPage/>}/>
       <Route path='/pyq/:modulespyq' element={<Pyq/>}/>
       <Route path='/pyqs/:subs' element={<PYQDashBord/>}/>
       <Route path='/:siggFeed/datafromuser' element={<SuggestionForm/>}/>
+      <Route path='/Admin' element={<Admin/>}/>
     </Routes>
     {
     showUserLogin ? <Login/>:null

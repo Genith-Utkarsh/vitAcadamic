@@ -14,7 +14,7 @@ app.use(cookieParser())
 app.use(Auth("userToken"))
 const allowedOrigins = [
   "https://vitacadeemic.onrender.com",
-  "http://localhost:3000"
+  "http://localhost:5173"
 ];
 
 app.use(cors({

@@ -4,10 +4,14 @@ import {  dummyLectureData, dummyPyqs } from '../assets/assets';
 import { FaPhotoVideo } from "react-icons/fa";
 import { CgNotes } from "react-icons/cg";
 import { FaCalculator } from "react-icons/fa";
+import { useAuth } from '../context/auth';
+import { FaUnlock } from "react-icons/fa";
+
 import Footer from '../components/Footer';
 import VideoModal from '../components/VideoModal';
 const DashboardPage = () => {
   const { sub } = useParams(); // e.g., "math", "physics"
+  const {userdata,setshowUserLogin} = useAuth()
   const filteredData = dummyLectureData.find(
     item => item.subject.toLowerCase() === sub.toLowerCase()
   );
@@ -75,7 +79,8 @@ const DashboardPage = () => {
                   <p className="text-gray-800 font-medium mb-2 md:mb-0 flex gap-2 items-center">
                     <FaCalculator/> {lecture.title}
                   </p>
-                  <div className="flex gap-4 flex-wrap">
+                  {
+                    userdata ?<div className="flex gap-4 flex-wrap">
                     <button
                       onClick={() => openVideoModal(lecture.videoLink, lecture.title)}
                       className="bg-[#136457] flex items-center gap-2 text-white px-4 py-1.5 rounded hover:bg-[#0e4a3f] transition"
@@ -90,7 +95,13 @@ const DashboardPage = () => {
                     >
                       <CgNotes/> Handwritten Notes
                     </a>
-                  </div>
+                  </div>:<button
+                      onClick={() => setshowUserLogin(true)}
+                      className="bg-[#136457] flex items-center gap-2 text-white px-4 py-1.5 rounded hover:bg-[#0e4a3f] transition"
+                    >
+                      <FaUnlock/>Login First
+                    </button>
+                  }
                   
                 </div>
               ))}

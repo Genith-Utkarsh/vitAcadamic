@@ -15,12 +15,15 @@ export const AuthContextProvider = ({ children }) => {
     axios.defaults.withCredentials = true
     const checkauths = async () => {
   try {
-    const { data } = await axios.get("/api/checkauth", { withCredentials: true }); // ✅ include this
+    const { data } = await axios.get("/api/checkauth"); // ✅ include this
     if (data.success) {
       setuserData(data.userData); 
     }
+    else{
+      setshowUserLogin(null)
+    }
   } catch (error) {
-    console.log("Auth check failed:", error);
+    setshowUserLogin(null)
   }
 };
 const logout = async()=>{

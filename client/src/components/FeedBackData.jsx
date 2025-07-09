@@ -109,7 +109,7 @@ const SuggestionForm = () => {
 
                             <textarea
                                 rows="5"
-                                id="feedback"
+                                id="feedbacks"
                                 onChange={handlechange}
                                 placeholder="Write your FeedBack..."
                                 className="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm resize-none focus:ring-2 focus:ring-[#33A491] outline-none"
