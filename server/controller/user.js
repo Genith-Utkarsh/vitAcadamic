@@ -1,6 +1,7 @@
 import User from "../model/user.js"
 import bcrypt from "bcryptjs"
 import { createToken } from "../auth/auth.js"
+import { Sendmail } from "../lib/emailtample.js"
 export const register = async (req, res) => {
   try {
     const { email, name, password } = req.body
@@ -19,6 +20,9 @@ export const register = async (req, res) => {
         name
       })
       const token = createToken(userDatas)
+        await Sendmail(email)
+           
+    console.log(data)
       res.cookie("userToken", token, {
         httpOnly: true,       // Prevents client-side JavaScript from accessing the cookie
         secure: true,         // Ensures cookie is sent only over HTTPS
@@ -29,8 +33,9 @@ export const register = async (req, res) => {
         userData: userDatas
       })
     }
+
   } catch (error) {
-    res.josn({
+    res.json({
       success: false,
       message: error.message
     })

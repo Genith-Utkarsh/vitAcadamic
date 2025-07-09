@@ -1,5 +1,6 @@
 import suggestion from "../model/suggestion.js";
 import feedback from "../model/feedback.js";
+import { Sendmail } from "../lib/emailtample.js";
 export const sugestionData = async (req, res) => {
    try {
       const { email, name, suggestions } = req.body
