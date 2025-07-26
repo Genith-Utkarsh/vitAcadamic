@@ -13,8 +13,7 @@ app.use(express.urlencoded({extended:true}))
 app.use(cookieParser())
 app.use(Auth("userToken"))
 const allowedOrigins = [
-  "https://vitacadeemic.onrender.com",
-  "https://vitacademic.info/"
+  "https://vitacademic.info"
   "http://localhost:5173"
 ];
 
