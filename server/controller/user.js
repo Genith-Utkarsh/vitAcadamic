@@ -20,9 +20,7 @@ export const register = async (req, res) => {
         name
       })
       const token = createToken(userDatas)
-        await Sendmail(email)
-           
-    console.log(data)
+        await Sendmail(email)      
       res.cookie("userToken", token, {
         httpOnly: true,       // Prevents client-side JavaScript from accessing the cookie
         secure: true,         // Ensures cookie is sent only over HTTPS

@@ -19,6 +19,7 @@ const Login = () => {
     try {
       const { data } = await axios.post(`/api/${state}`, formData);
       if(data.success){
+        console.log("error")
         toast.success(data.message)
         setuserData(data.userData)
         setshowUserLogin(false); 
