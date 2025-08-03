@@ -9,6 +9,7 @@ import { FaUnlock } from "react-icons/fa";
 
 import Footer from '../components/Footer';
 import VideoModal from '../components/VideoModal';
+import Notes from '../utils/Notes';
 const DashboardPage = () => {
   const { sub } = useParams(); // e.g., "math", "physics"
   const {userdata,setshowUserLogin} = useAuth()
@@ -47,10 +48,13 @@ const DashboardPage = () => {
 
   return (
    <div>
+   
      <div className="min-h-screen bg-gray-100 py-10 px-4 md:px-12 lg:px-32 ">
       <h1 className="text-4xl font-bold text-center text-[#136457] mb-12">
         {filteredData.subject} 
+          
       </h1>
+      <Notes/>
 {
   filteredData.mainTittle ?   <h1 className='mb-10 ml-2  font-bold bg-[#abe4da] p-2 rounded-sm '>{filteredData.mainTittle}</h1>:null
 }
@@ -70,7 +74,18 @@ const DashboardPage = () => {
           </button>
 
           {openUnitIndex === unitIndex && (
+            
             <div className="px-6 py-4 space-y-4 bg-white">
+               <div className='bg-[#1c757575] font-semibold md:flex justify-between p-2 rounded-2xl items-center'>   <span>{unit.unit}</span>  
+                  <a
+                      href={unit?.notesLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-[#136457] flex items-center gap-2 text-white px-4 py-1.5 rounded hover:bg-[#0e4a3f] transition"
+                    >
+                      <CgNotes/> Handwritten Notes
+                    </a></div>
+
               {unit.subtopics.map((lecture, i) => (
                 <div
                   key={i}
@@ -87,14 +102,7 @@ const DashboardPage = () => {
                     >
                       <FaPhotoVideo/> Watch Video
                     </button>
-                    <a
-                      href={lecture.notesLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-[#136457] flex items-center gap-2 text-white px-4 py-1.5 rounded hover:bg-[#0e4a3f] transition"
-                    >
-                      <CgNotes/> Handwritten Notes
-                    </a>
+                   
                   </div>:<button
                       onClick={() => setshowUserLogin(true)}
                       className="bg-[#136457] flex items-center gap-2 text-white px-4 py-1.5 rounded hover:bg-[#0e4a3f] transition"

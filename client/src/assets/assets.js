@@ -12,46 +12,71 @@ import image10 from "./python.jpg"
 import data from "./data.png"
 import aem from "./yourself-2.png"
 import amepdf from "./AME-Topic.pdf"
+import m1unit1 from "./m1-uni1-01.pdf"
+import m1unit2 from "./m1-unit2.pdf"
+import m1unit3 from "./m1unit3.pdf"
+import m1unit4 from "./m1unit4.pdf"
+import m1unit5 from "./m1unit5.pdf"
+import m1unit6 from "./m1unit6.pdf"
+import m2unit1 from "./m2unit1.pdf"
+import m2unit2 from "./m2unit2.pdf"
+import m2unit3 from "./m2unit3.pdf"
+import m2unit4 from "./m2unit4.pdf"
+import m2unit5 from "./m2unit5.pdf"
+import m2unit6 from "./m2unit6.pdf"
 export default {
-    image1,
-    image2,
-    image3,
-    image4,
-    image5,
-    image6,
-    image7,
-    imgae8,
-    image9,
-    image10,
-    data,
-    aem,amepdf
-    
+  image1,
+  image2,
+  image3,
+  image4,
+  image5,
+  image6,
+  image7,
+  imgae8,
+  image9,
+  image10,
+  data,
+  aem, amepdf,
+  m1unit1,
+  m1unit2,
+  m1unit3,
+  m1unit4,
+  m1unit5,
+  m1unit6,
+  m2unit1,
+  m2unit2,
+  m2unit3,
+  m2unit4,
+  m2unit5,
+  m2unit6
+
+
 }
 
 // Utility function to extract YouTube video ID from URL
 export const extractYouTubeVideoId = (url) => {
   if (!url) return null;
-  
+
   // Handle YouTube playlist URLs
   const playlistMatch = url.match(/[?&]list=([a-zA-Z0-9_-]+)/);
   if (playlistMatch) {
     return { type: 'playlist', id: playlistMatch[1] };
   }
-  
+
   // Handle different YouTube video URL formats
   const patterns = [
     /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^#&?]*)/,
     /youtube\.com\/v\/([^#&?]*)/,
     /youtube\.com\/watch\?.*v=([^#&?]*)/
   ];
-  
+
   for (const pattern of patterns) {
     const match = url.match(pattern);
     if (match && match[1] && match[1].length === 11) {
       return { type: 'video', id: match[1] };
     }
   }
-  
+
   return null;
 };
 
@@ -60,40 +85,40 @@ export const lectureData = [
     ModuleName: "module1",
     subjects: [
       {
-        id:1,
+        id: 1,
         name: "Math-1",
         text: "LINEAR ALGEBRA AND DIFFERENTIAL EQUATIONS",
         image: image1,
       },
       {
-        id:2,
+        id: 2,
         name: "COOA",
         text: "COMPUTER ORGANIZATION AND ARCHITECTURE",
         image: image2, // Replace with real image
       },
       {
-        id:3,
+        id: 3,
         name: "C",
         text: "PROBLEM SOLVING & PROGRAMMING",
         image: image3,
       },
       {
-        id:4,
+        id: 4,
         name: "Web Development",
         text: "Web Development",
         image: image4,
       },
       {
-        id:5,
+        id: 5,
         name: "ASEP-1",
         text: "APPLIED SCIENCE & ENGINEERING PROJECT-1",
         image: imgae8,
       },
       {
-        id:7,
+        id: 7,
         name: "RAAD-1",
         text: "REASONING & APTITUDE DEVELOPMENT - 1",
-        image:image7,
+        image: image7,
       },
     ],
   },
@@ -101,42 +126,42 @@ export const lectureData = [
     ModuleName: "module2",
     subjects: [
       {
-        id:1,
+        id: 1,
         name: "Math-2",
         text: "CALCULUS AND STATISTICS",
         image: image1,
       },
       {
-        id:2,
+        id: 2,
         name: "PYTHON",
         text: "PYTHON FOR ENGINEERS",
         image: image10, // Replace with real image
       },
       {
-        id:3,
+        id: 3,
         name: "DATA ANALYSIS",
         text: "DATA ANALYSIS",
         image: data,
       },
       {
-        id:4,
+        id: 4,
         name: "AEM",
         text: "APPLIED ELECTROMECHANICS",
-        image:aem
-,
+        image: aem
+        ,
       },
       {
-        id:5,
+        id: 5,
         name: "ASEP-2",
         text: "APPLIED SCIENCE & ENGINEERING PROJECT-2",
         image: image9
         ,
       },
       {
-        id:7,
+        id: 7,
         name: "RAAD-2",
         text: "REASONING & APTITUDE DEVELOPMENT - 2",
-        image:image7,
+        image: image7,
       },
     ],
   },
@@ -149,36 +174,38 @@ export const dummyLectureData = [
     units: [
       {
         unit: 'Unit 01: SYSTEM OF LINEAR EQUATIONS',
+        notesLink: m1unit1,
         subtopics: [
           {
             title: 'Revision of matrices, Elementary transformations, Elementary Matrices',
             videoLink: 'https://youtu.be/zAsSkYhDxGM?si=lsZ9ogQ9UaRIdqD5',
-            notesLink: 'https://example.com/notes/matrix-concepts.pdf',
+            
           },
           {
             title: 'Rank of matrix: Echelon form, Pivot position, Pivot columns, non-pivot columns',
             videoLink: 'https://youtu.be/qBBhTkIdToY?si=vXpKy-dqhnJhNkZm',
-            notesLink: 'https://example.com/notes/matrix-concepts.pdf',
+           
           },
           {
             title: 'Non-Homogeneous System of linear equation and its solution and problem solving',
             videoLink: 'https://youtu.be/B4h6OkQ0ZJ8?si=w0qVfgq2YTadfiC2',
-            notesLink: 'https://example.com/notes/matrix-concepts.pdf',
+           
           },
           {
             title: 'Homogeneous System of linear equation and its solution and problem solving',
             videoLink: 'https://youtu.be/gXveJraU7hc?si=jKrascQPQtW82O7q',
-            notesLink: 'https://example.com/notes/matrix-concepts.pdf',
+           
           },
           {
             title: 'Gauss-Jordan Elimination Problem solving on all cases',
             videoLink: 'https://youtu.be/iggxjHSQiOI?si=A2BYXzBnYRjHQx1D ',
-            notesLink: 'https://example.com/notes/matrix-concepts.pdf',
+           
           },
         ],
       },
       {
         unit: 'Unit 02: VECTOR SPACES',
+        notesLink: m1unit4,
         subtopics: [
           {
             title: 'Introduction, Definition of Vector Space , Standard Vector Spaces Definition of Subspace ',
@@ -214,6 +241,7 @@ export const dummyLectureData = [
       },
       {
         unit: 'Unit 03:INNER PRODUCT SPACES',
+        notesLink: m1unit4,
         subtopics: [
           {
             title: 'Inner Product- Definition and Examples, Inner product spaces',
@@ -248,7 +276,8 @@ export const dummyLectureData = [
         ],
       },
       {
-        unit: 'Unit 04:LINEAR TRANSFORMA TION',
+        unit: 'Unit 04:LINEAR TRANSFORMATION',
+        notesLink: m1unit5,
         subtopics: [
           {
             title: 'Introduction to linear transformations, Matrix representation relative to Standard Basis',
@@ -284,6 +313,7 @@ export const dummyLectureData = [
       },
       {
         unit: 'Unit 05: EIGEN VALUES AND EIGEN VECTORS',
+        notesLink: m1unit5,
         subtopics: [
           {
             title: 'Eigen Values and Eigen Vectors of a matrix, Characteristic Equation,Properties',
@@ -319,6 +349,7 @@ export const dummyLectureData = [
       },
       {
         unit: 'Unit 06: LINEAR DIFFERENTIAL EQUATIONS',
+        notesLink: m1unit6,
         subtopics: [
           {
             title: 'Exact differential equation, First order linear ODE',
@@ -343,6 +374,251 @@ export const dummyLectureData = [
           {
             title: 'Application of diagonalization (Solution of DE by matrix method)',
             videoLink: 'https://www.youtube.com/watch?v=XYi2-LPrwm4',
+            notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    subject: 'MATH-2',
+    units: [
+      {
+        unit: 'Unit 01: FUNCTIONS OF SINGLE VARIABLE ',
+        notesLink: m2unit1,
+        subtopics: [
+          {
+            title: 'Single-variable functions, sequences, definitions, examples, and convergence/divergence concepts',
+            videoLink: 'https://youtu.be/B95FlnkCV1w?si=-pxiyUfGRVy7arK3',
+          },
+          {
+            title: 'Infinite Series introduction, Sequence of Partial Sum, Convergence and Divergence of Seriee, divergence test',
+            videoLink: 'https://youtu.be/XC-M-oTVR_0?si=NcTSZVDzZYL5jjaX',
+           
+          },
+          {
+            title: 'Comparison test Direct and limnit comparison',
+            videoLink: 'https://youtu.be/oZtAgihok5s?si=G3ecL-7oDM9Dp4tS',
+           
+          },
+          {
+            title: 'Ratio Test, Power Seriee, Region of Convergence',
+            videoLink: 'https://youtu.be/wOURocjlq14?si=VIhMQAkiXdLNBLP8',
+           
+          },
+          {
+            title: 'Taylor s Series, introduction to Maclauring Series',
+            videoLink: 'https://youtu.be/a58otkmkHtk?si=PPXTl60tM4U8fSnu',
+           
+          },
+          {
+            title: 'Standerde expansions using Maclaurin serien',
+            videoLink: 'https://youtu.be/zaPMAgSXAuc?si=gyeXsQVFHj674ltd ',
+           
+          },
+        ],
+      },
+      {
+        unit: 'Unit 02: FUNCTIONS OF SEVERAL VARIABLES ',
+        notesLink: m2unit2,
+        subtopics: [
+          {
+            title: 'Introduction to Multivariate functions and Partial Derivatives',
+            videoLink: 'https://youtu.be/eTp5wq-cSXY?si=m8DLrNWiN0RtZv_-',
+           
+          },
+          {
+            title: 'Problems on evaluation of partial derivatives',
+            videoLink: 'https://youtube.com/playlist?list=PLDaH-PoUT6Thy1bpqeI9J3QxFJLHdZQbO&si=uxDTHnkX_Y_AR9df',
+            notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
+          },
+          {
+            title: 'Differentiation of Composite functione, chain rule',
+            videoLink: 'https://youtu.be/Zur0JV_QqYk?si=gVgjtI6zL6dRO7xG',
+            notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
+          },
+          {
+            title: 'Implicit functions, Total Derivative ',
+            videoLink: 'https://youtu.be/9GKfvknvTQk?si=39RkvN2Mj3WpKFQU',
+            notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
+          },
+          {
+            title: ' Ewler theorm for homogeneous functions',
+            videoLink: 'https://youtu.be/palSdK9P-ns?si=1ajjo6VmdUDnDS-v',
+            notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
+          },
+          {
+            title: ' Maxima and Minima of funciton of two variables ',
+            videoLink: 'https://youtu.be/In3oZPIymm8?si=KfL4XKM81viJ7v0s',
+            notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
+          },
+          {
+            title: 'Lagrange method of udetermired multipliers',
+            videoLink: 'https://youtu.be/etLoYBJMCX8?si=0zeN2VBjCrxr5EeB',
+            notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
+          },
+          {
+            title: ' Jacobian of funciton of two variables',
+            videoLink: 'https://youtu.be/YXmeH1yevkk?si=3nqm80K5rqY4YHdf',
+            notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
+          },
+          {
+            title: 'Errors and approximations',
+            videoLink: 'https://youtu.be/YXmeH1yevkk?si=3nqm80K5rqY4YHdf',
+            notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
+          },
+        ],
+      },
+      {
+        unit: 'Unit 03:VECTOR DIFFERENTIATION',
+        notesLink: m2unit3,
+        subtopics: [
+          {
+            title: 'Intro to single-variable functions and sequences with definitions, examples, and conver/diver discussion.',
+            videoLink: 'https://youtu.be/FfJtVvQtqTM?si=28zcLoDqqiVxUliD',
+           
+          },
+          {
+            title: 'Introduction to Vector Differential Operator Del, Geometrical Interpretation and problems',
+            videoLink: 'https://youtu.be/52sLsNvoW_c?si=YBpSL5y05V9FEP8a',
+            notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
+          },
+          {
+            title: 'Action of De on Segler point and Vector point functions',
+            videoLink: 'https://youtu.be/2uPUUwQxPtA?si=W533RrS7IUfISdrg',
+            notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
+          },
+          {
+            title: 'Gradient of scalar Point function and  physical interpretation',
+            videoLink: 'https://youtu.be/ajBcee-OwzI?si=uE00jG26507Wx8UL',
+            notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
+          },
+          {
+            title: 'Directional Derivative and its physical interpretation',
+            videoLink: 'https://youtu.be/NAJuuEKwOIQ?si=EhDGQNdq5gk0bbrm ',
+            notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
+          },
+        ],
+      },
+      {
+        unit: 'Unit 04:MULTIPLE INTEGRALS AND APPLICATIONS',
+        notesLink: m2unit4,
+        subtopics: [
+          {
+            title: 'Definition of double integral, order of integration with examples',
+            videoLink: 'https://youtu.be/swF628VHQDo?si=foiMSZ_VLz4cQANh',
+           
+          },
+          {
+            title: 'Evaluation in Carteian and poler coordinates',
+            videoLink: 'https://youtu.be/AAdah81MB50?si=Mch49R5NGBVjHwLu',
+            notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
+          },
+          {
+            title: ' Change of order of integrstion',
+            videoLink: 'https://youtu.be/IvXED51OTDc?si=DVhk07cwLd3lWd9_',
+            notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
+          },
+          {
+            title: ' Area by double integration',
+            videoLink: 'https://youtu.be/FVZhdEPldIk?si=DdY7cyzjZuHqKPut',
+            notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
+          },
+          {
+            title: ' Evaluntion of Triple integration ',
+            videoLink: 'https://youtu.be/re6hf7m2hP4?si=LJW53Jwg7WZ9zO3z',
+            notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
+          },
+          {
+            title: 'Evaluation by cylindrical Coordinates',
+            videoLink: 'https://youtu.be/FAihln6nIHw?si=hmRUr_IWYX13zGBC',
+            notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
+          },
+          {
+            title: ' Evaluation by spherical polar coordinates ',
+            videoLink: 'https://youtu.be/S37r1pedR0M?si=lS4rrbtUUXgWaJNl',
+            notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
+          },
+          {
+            title: ' Volume by triple integration ',
+            videoLink: 'https://youtu.be/S0jCEn1UMCc?si=HcWlxPSR6F7dK7c1',
+            notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
+          },
+        ],
+      },
+      {
+        unit: 'Unit 05: DESCRIPTIVE STATISTICS  ',
+        notesLink: m2unit5,
+        subtopics: [
+          {
+            title: 'Population , Sample, Statistical Variables, qualitative and quantitative variables, Types of variables',
+            videoLink: 'https://youtu.be/h8sg_XBp6VA?si=MmZ284YNw-0sV-e2',
+           
+          },
+          {
+            title: 'https://youtu.be/FqB5Es1HXI4?si=xinal9G-Dd1sTBsX',
+            videoLink: 'https://youtu.be/0XsAiSLnODw?si=OKRZerIXND1wtu-A',
+            notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
+          },
+          {
+            title: 'Measures of central tendency and dispersion',
+            videoLink: 'https://youtu.be/X48cZ6DGaSw?si=Fz7nNPjsB2xeyU2v',
+            notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
+          },
+          {
+            title: 'Coefficient of variation. Skewness, Kurtosis',
+            videoLink: 'https://youtu.be/m9a6rg0tNSM?si=pLTO7aF2i5lvwxpT',
+            notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
+          },
+          {
+            title: ' Quartiles, Decile, Percentiles',
+            videoLink: 'https://youtu.be/ACuG1CR-wwE?si=C6XaygagucBmnux2',
+            notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
+          },
+          {
+            title: 'Data visualization (Graphical Representation- Histogram, Box plot)',
+            videoLink: 'https://youtu.be/2D5PswC7JBc?si=TrnkoX6j6KeKaIKW',
+            notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
+          },
+        ],
+      },
+      {
+        unit: 'Unit 06: RANDOM VARIABLES',
+        notesLink: m2unit6,
+        subtopics: [
+          {
+            title: 'Introduction Random veriables Domain, Range, Types of random variables ',
+            videoLink: 'https://youtu.be/V3iEsLPAD68?si=_lY9Nz1diXO4vH3F',
+           
+          },
+          {
+            title: 'Probability mass function, Probability distribution function of discrete random variable',
+            videoLink: 'https://youtu.be/7MJ3b_J_ZCE?si=l_5vZd9PS1e21Fs2',
+            notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
+          },
+          {
+            title: 'Probability density function and Cumulative diatribution function of a continuous random variable',
+            videoLink: 'https://youtu.be/l0ecMiNUZu8?si=fKc-YhlCGUPkz_8b',
+            notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
+          },
+          {
+            title: 'Expectation variance and standard deviation of diecrete and continuous random variable',
+            videoLink: 'https://youtu.be/H2Ji-Q4MfqU?si=fSRuCRJq6rWBXuwI',
+            notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
+          },
+          {
+            title: 'Bivariate Joint Probability distributions',
+            videoLink: 'https://youtu.be/L0zWnBrjhng?si=m8qDNEpukndX-ShM',
+            notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
+          },
+          {
+            title: ' Covariance, Corelation Coefficient ',
+            videoLink: 'https://youtu.be/sU8RsIsZ6Dg?si=PpKsdDcgyXKShwgk',
+            notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
+          },
+          {
+            title: ' Dependence, Independence of random  variables',
+            videoLink: 'https://youtu.be/GZ0v2ahlzPE?si=NaURISxuIM3jfW_t ',
             notesLink: 'https://example.com/notes/homogeneous-eq.pdf',
           },
         ],
@@ -531,7 +807,7 @@ export const dummyLectureData = [
             notesLink: 'https://example.com/notes/work-energy.pdf',
           },
           {
-            title:       ' Multicore Model Case Study CORE2DUO',
+            title: ' Multicore Model Case Study CORE2DUO',
             videoLink: 'https://www.youtube.com/watch?v=efgh5678',
             notesLink: 'https://example.com/notes/work-energy.pdf',
           },
@@ -560,7 +836,7 @@ export const dummyLectureData = [
             videoLink: 'https://www.youtube.com/playlist?list=PLpyc33gOcbVA4qXMoQ5vmhefTruk5t9lt',
             notesLink: 'https://example.com/notes/laws-of-motion.pdf',
           },
-          
+
         ],
       },
       {
@@ -571,7 +847,7 @@ export const dummyLectureData = [
             videoLink: 'https://www.youtube.com/playlist?list=PL1zxEeUFe9lfDhh_Dewp5xHOnjLatGItQ',
             notesLink: 'https://example.com/notes/laws-of-motion.pdf',
           },
-          
+
         ],
       },
       {
@@ -582,7 +858,7 @@ export const dummyLectureData = [
             videoLink: 'https://www.youtube.com/playlist?list=PLBlnK6fEyqRhMP7gwIe2j0hb1PCvYn0RI',
             notesLink: 'https://example.com/notes/laws-of-motion.pdf',
           },
-        
+
         ],
       },
       {
@@ -670,7 +946,7 @@ export const dummyLectureData = [
   },
   {
     subject: 'ASEP-1',
-    mainTittle:" New Ideas For Your Asep-projects ",
+    mainTittle: " New Ideas For Your Asep-projects ",
     units: [
       {
         unit: 'Web devlopement',
@@ -690,7 +966,7 @@ export const dummyLectureData = [
             videoLink: 'https://www.youtube.com/playlist?list=PLpyc33gOcbVA4qXMoQ5vmhefTruk5t9lt',
             notesLink: 'https://example.com/notes/laws-of-motion.pdf',
           },
-          
+
         ],
       },
       {
@@ -701,7 +977,7 @@ export const dummyLectureData = [
             videoLink: 'https://www.youtube.com/playlist?list=PL1zxEeUFe9lfDhh_Dewp5xHOnjLatGItQ',
             notesLink: 'https://example.com/notes/laws-of-motion.pdf',
           },
-          
+
         ],
       },
       {
@@ -712,7 +988,7 @@ export const dummyLectureData = [
             videoLink: 'https://www.youtube.com/playlist?list=PLBlnK6fEyqRhMP7gwIe2j0hb1PCvYn0RI',
             notesLink: 'https://example.com/notes/laws-of-motion.pdf',
           },
-        
+
         ],
       },
       {
@@ -763,7 +1039,7 @@ export const dummyLectureData = [
             videoLink: 'https://youtu.be/mIY3QVktHU8?si=BFQuasQGMfeRs37P',
             notesLink: 'https://drive.google.com/file/d/1701LzeKDZsxigj9nATmlxcWUpQqHTGkC/view',
           },
-          
+
         ],
       },
       {
@@ -774,7 +1050,7 @@ export const dummyLectureData = [
             videoLink: 'https://youtu.be/Bd-1YM8taBc?si=3FJaStqYiqLSO45L',
             notesLink: 'https://drive.google.com/file/d/1_RhGohsGEZpgwrnVuvhgNrk2798v49Qq/view',
           },
-          
+
         ],
       },
       {
@@ -790,7 +1066,7 @@ export const dummyLectureData = [
             videoLink: 'https://youtu.be/sEiMDFdbPGo?si=DYr79kuW-3z0qUt8',
             notesLink: 'https://drive.google.com/file/d/1fOwBJtu__0QI-YA0qnrBroBHYjU7izs1/view',
           },
-        
+
         ],
       },
       {
@@ -1201,41 +1477,41 @@ export const dummypyqsubject = [
     ModuleName: "module1",
     subjects: [
       {
-        id:1,
+        id: 1,
         name: "Math",
         text: "LINEAR ALGEBRA AND DIFFERENTIAL EQUATIONS",
         image: image1,
       },
       {
-        id:2,
+        id: 2,
         name: "COOA",
         text: "COMPUTER ORGANIZATION AND ARCHITECTURE",
         image: image2, // Replace with real image
       },
       {
-        id:3,
+        id: 3,
         name: "C",
         text: "PROBLEM SOLVING & PROGRAMMING",
         image: image3,
       },
       {
-        id:4,
+        id: 4,
         name: "Web Development",
         text: "Web Development",
         image: image4,
       },
       {
-        id:5,
+        id: 5,
         name: "ASEP-1",
         text: "APPLIED SCIENCE & ENGINEERING PROJECT-1",
         image: imgae8,
       },
-     
+
       {
-        id:7,
+        id: 7,
         name: "RAAD-1",
         text: "REASONING & APTITUDE DEVELOPMENT - 1",
-        image:image7,
+        image: image7,
       },
     ],
   },
@@ -1243,40 +1519,40 @@ export const dummypyqsubject = [
     ModuleName: "module2",
     subjects: [
       {
-        id:1,
+        id: 1,
         name: "Math",
         text: "CALCULUS AND STATISTICS",
         image: image1,
       },
       {
-        id:2,
+        id: 2,
         name: "PYTHON",
         text: "PYTHON FOR ENGINEERS",
         image: image2, // Replace with real image
       },
-       {
-        id:2,
+      {
+        id: 2,
         name: "PYTHON",
         text: "PYTHON FOR ENGINEERS",
         image: image10, // Replace with real image
       },
       {
-        id:4,
+        id: 4,
         name: "AEM",
         text: "APPLIED ELECTROMECHANICS",
         image: image4,
       },
       {
-        id:5,
+        id: 5,
         name: "ASEP-2",
         text: "APPLIED SCIENCE & ENGINEERING PROJECT-2",
         image: image9,
       },
       {
-        id:7,
+        id: 7,
         name: "RAAD-2",
         text: "REASONING & APTITUDE DEVELOPMENT - 2",
-        image:image7,
+        image: image7,
       },
     ],
   },
@@ -1292,10 +1568,10 @@ export const dummyPyqs = [
         subtopics: [
           {
             title: '2024',
-                practiceQuestion: 'https://www.youtube.com/watch?v=efgh5678',
-            notesLink: 'https://example.com/notes/matrix-concepts.pdf',
+            practiceQuestion: 'https://www.youtube.com/watch?v=efgh5678',
+           
           },
-          
+
         ],
       },
       {
@@ -1303,10 +1579,10 @@ export const dummyPyqs = [
         subtopics: [
           {
             title: '2024',
-           practiceQuestion: 'https://www.youtube.com/watch?v=efgh5678',
+            practiceQuestion: 'https://www.youtube.com/watch?v=efgh5678',
             notesLink: amepdf,
           },
-          
+
         ],
       },
       {
@@ -1314,10 +1590,10 @@ export const dummyPyqs = [
         subtopics: [
           {
             title: '2024',
-                practiceQuestion: 'https://www.youtube.com/watch?v=efgh5678',
-            notesLink: 'https://example.com/notes/first-order-des.pdf',
+            practiceQuestion: 'https://www.youtube.com/watch?v=efgh5678',
+           
           },
-         
+
         ],
       },
       {
@@ -1345,7 +1621,7 @@ export const dummyPyqs = [
         subtopics: [
           {
             title: '2024',
-             practiceQuestion: 'https://www.youtube.com/watch?v=efgh5678',
+            practiceQuestion: 'https://www.youtube.com/watch?v=efgh5678',
             notesLink: 'https://example.com/notes/first-order-des.pdf',
           }
         ],
@@ -1405,7 +1681,7 @@ export const dummyPyqs = [
         subtopics: [
           {
             title: '2024',
-            practiceQuestion:'https://www.youtube.com/watch?v=efgh5678',
+            practiceQuestion: 'https://www.youtube.com/watch?v=efgh5678',
             notesLink: 'https://example.com/notes/work-energy.pdf',
           },
         ],
