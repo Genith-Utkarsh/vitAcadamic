@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import { useAuth } from "../context/auth";
 import toast from "react-hot-toast";
 import { useEffect } from "react";
+import Looder from "../../lib/Looder";
 const Login = () => {
    const { setshowUserLogin, axios,setMenuOpen,setuserData } = useAuth();
   const [state, setState] = useState("login"); // or "signup"
   const [formData, setFormData] = useState({});
- 
+ const [loder,setLoder] = useState(false)
  const handleChange = (e) => {
 
     setFormData((prev) => ({
@@ -16,6 +17,7 @@ const Login = () => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoder(true)
     try {
       const { data } = await axios.post(`/api/${state}`, formData);
       if(data.success){
@@ -24,10 +26,12 @@ const Login = () => {
         setuserData(data.userData)
         setshowUserLogin(false); 
         setMenuOpen(false)
+         setLoder(false)
       }
       else{
         toast.error(data.message)
         setshowUserLogin(true)
+        setLoder(false)
       }
     } catch (error) {
       console.error("Auth error:", error)
@@ -65,7 +69,9 @@ const Login = () => {
                 </p>
             )}
             <button className="bg-[#33A491] hover:bg-[#314e49] transition-all text-white w-full py-2 rounded-md cursor-pointer">
-                {state === "register" ? "Create Account" : "Login"}
+               {
+                loder ? <Looder/>: <p> {state === "register" ? "Create Account" : "Login"}</p>
+               }
             </button>
         </form>
        </div>

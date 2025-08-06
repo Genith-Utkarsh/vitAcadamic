@@ -1,7 +1,9 @@
 import React from 'react'
 import { useAuth } from '../context/auth'
+import { useNavigate } from 'react-router-dom'
 const Footer = () => {
     const {setfeedbackon} = useAuth()
+    const navigate =  useNavigate()
     return (
         <div>
 
@@ -40,6 +42,9 @@ const Footer = () => {
                                 <li><a href="#">Tutorials</a></li>
                                 <li><a href="#">Blog</a></li>
                                 <li><a href="#">Community</a></li>
+                                <button className='bg-[#33A491] p-2 text-white rounded-sm' onClick={()=>navigate("/contact")}>
+                                    Contacts
+                                </button>
                             </ul>
                         </div>
                         <div>
